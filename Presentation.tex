@@ -44,6 +44,7 @@
 \newcommand{\bigqm}[1][1]{\text{\larger[#1]{\textbf{?}}}}
 \newcommand*{\vimage}[2]{\vcenter{\hbox{\includegraphics[#1]{#2}}}}
 \newcommand*{\vpointer}{\vcenter{\hbox{\scalebox{2}{\Huge\pointer}}}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
 
 \bibliography{Presentation}
 \bibstyle{plain}
@@ -56,9 +57,10 @@
   physical paper width=8in, physical paper height=6in]
 
 % Here's where the presentation starts, with the info for the title slide
-\title{Landmark Localisation with Deep Neural Networks: \\Quantifying Uncertainty and Training with Synthetic Data}
-\author{Daniel Seidinger}
-\date{30.05.2018}
+\title{Chapter 14 -  Experimentation}
+\author{Daniel Seidinger\\
+Brikena Celaj}
+\date{02.11.2018}
 
 \begin{document}
 
@@ -66,372 +68,234 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{Motivation}
+\begin{frame}{Performance of Algorithms}
+\onslide<1->{
+ \textbf{Tools:}\\
+\begin{itemize}
+\item Formal proof
+\item Mathematical modeling
+\item Simulation and
+\item Experimentation
+\end{itemize} 
+
+}
+
+\onslide<2>{
+ \textbf{Constraints:}\\
+\begin{itemize}
+\item Basis evaluation
+\item Processing time
+\item Memory and disk requirements
+\item Disk and network traffic
+\item Applicability
+\end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Performance of Algorithms}
 
 \onslide<1->{
-\begin{figure}
-$\vimage{scale=0.5}{fig/pred_example_before}\vpointer
-\vimage{scale=0.43}{fig/pred_example2}$
-\end{figure}
+ \textbf{Basis of evaluation}\\
+\begin{itemize}
+\item Comparison of the algorithm
+\item If the basis of comparison is questionable, the results are questionable too
+\end{itemize} 
 
 }
-
-\onslide<2-6>{
+\onslide<2-3>{
+ \textbf{Processing time}\\
 \begin{itemize}
-\item Face Detection
+\item Time is one of the principal resources used by algorithm
+\item Not always easy to measure
 \end{itemize}
 }
-
-\onslide<3-6>{
+\onslide<3>{
+ \textbf{Memory and disk requirements}\\
 \begin{itemize}
-\item Landmark Localisation
-\end{itemize}
-}
-\onslide<4-6>{
-\begin{itemize}
-\item Landmark Visibility
-\end{itemize}
-}
-\onslide<5-6>{
-\begin{itemize}
-\item Pose Estimation
-\end{itemize}
-}
-\onslide<6>{
-\begin{itemize}
-\item Gender Prediction\footcite{ranjan2017hyperface}
+\item Specify how your algorithms use memory
 \end{itemize}
 }
 \end{frame}
 
-\begin{frame}{Motivation}
+\begin{frame}{Performance of Algorithms }
 \onslide<1->{
-\begin{figure}
-$\vimage{scale=0.5}{fig/pred_example_before}\vpointer
-\vimage{scale=0.43}{fig/pred_example2}$
-\end{figure}
+\textbf{Disk and network traffic}\\
 \begin{itemize}
-\item Can we reproduce this?
+\item Disk costs have two components, the time to fetch the first bit of requested data  and the time required to transmit the requested data
+\item Similar with network traffic
+\item Describe disk performance with approximations 
 \end{itemize}
 }
-
-\onslide<2->{
+\onslide<2>{
+ \textbf{Applicability}\\
 \begin{itemize}
-\item Can we improve the accuracy?
-\end{itemize}
-}
-
-\onslide<3->{
-\begin{itemize}
-\item Can we use synthetic data for the training?
+\item Comparison with regard to functionality
+\item A common error - comparison of two algorithms that perform different tasks
 \end{itemize}
 }
 \end{frame}
 
-\begin{frame}{Outline}
-\tableofcontents
-\end{frame}
 
 
-\section{Hyperface}
-\begin{frame}{Hyperface Architecture}
-
-\only<1>{
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{fig/hyperface_structure}
-\end{figure}
-}
-
-\only<2>{
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{fig/hyperface_structure1}
-\end{figure}
-}
-
-\only<3>{
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{fig/hyperface_structure2}
-\end{figure}
-}
-\only<4>{
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{fig/hyperface_structure3}
-\end{figure}
-}
-\end{frame}
-
-
-\begin{frame}{Overcoming the need for a face detector}
-
+\begin{frame}{Human Studies }
 \onslide<1->{
-1) Standard procedure: \\
-Face Detector $\rightarrow$ Facebox $\rightarrow$ Predict on this box
-}
-
-\onslide<2->{
-2) Hyperface: \\
-\includegraphics[scale=0.22]{fig/selective_search}
-}
-
-\end{frame}
-
-\begin{frame}{Experiments}
-\begin{center}
-\begin{huge}
-Experiments
-\end{huge}
-\end{center}
-\end{frame}
-
-\section{Experiments}
-\begin{frame}{Setting}
+Humans resolve many research questions:
 \begin{itemize}
-\item Mostly AFLW Dataset:  24'993 faces in 21'997 images
-\item Use highest scoring region (face detection task)
-\item Normalized Mean Error: $error = \frac{1}{N} \sum_{i = 1}^N \frac{\sqrt{(\hat{l}_i - l_i)^2}}{\sqrt{{w_f}^2 + {h_f}^2}}$
-\begin{figure}
-\centering
-\includegraphics[scale=0.2]{fig/aflw_example2}
-\includegraphics[scale=0.2]{fig/aflw_example3}
-\end{figure}
+\item \tab Has the compressed image adequate quality? \\
+\item \tab Are the responses of the search engine useful?\\
+\item \tab Did the robot do a good job?\\
 \end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Reproducing of Paper Results}
-\begin{itemize}
-\item Open source framework\footnote{https://github.com/takiyu/hyperface}, not from the author of the paper\\
-$\rightarrow$ Reproduce results of paper
-\item Influence of pose: Split into Under \& Over
-\item Over: At least one angle $>$ 45 degrees
-\item Under: All angles $<$ 45 degrees
-\item Discarding: Ignore image if face detection score too low
-\begin{figure}
-\centering
-\includegraphics[scale=0.15]{fig/yaw_dist}
-\includegraphics[scale=0.15]{fig/roll_dist}
-\includegraphics[scale=0.15]{fig/pitch_dist}
-\end{figure}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Reproducing of Paper Results - Landmarks}
-
-\only<1>{
-\begin{figure}
-\includegraphics[scale=0.6]{fig/error_rate_eval_all_splits_and_alldisc}
-\end{figure}
 }
-\only<2>{
-\begin{figure}
-\includegraphics[scale=0.6]{fig/error_rate_eval_all_splits_and_alldisc_vs_orig_inserted}
-\end{figure}
+\onslide<2>{
+\vspace{5mm}
+Researchers should answer these questions:
+\begin{itemize}
+\item \tab Are humans subjects need in the research? \\
+\item \tab How many humans will be needed?\\
+\item \tab What instructions will they be given?\\
+\end{itemize}
 }
-
 \end{frame}
-
-\begin{frame}{Reproducing of Paper Results - Pose}
-
-\begin{figure}
-
-\subfigure[All \& Discarding]{\includegraphics[scale=0.5]{fig/mixed_pose_error_all_det5}}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Reproducing of Paper Results - Visibility}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.25]{fig/mixed_visibility_error_eval}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Problem}
-\begin{figure}
-\centering
-\includegraphics[scale=0.25]{fig/example_bad_box}
-\includegraphics[scale=0.25]{fig/example_good_box}
-\end{figure}
-\begin{itemize}
-\item Highest scoring regions sometimes not optimal
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Recall}
-\begin{itemize}
-\item Reproduction? \checkmark
-\item Improve Accuracy?
-\item \color{gray}{Synthetic Data in Training?} 
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Reminder - Selective Search}
+\begin{frame}{Human Studies }
 \onslide<1->{
-\begin{figure}
-\centering
-\includegraphics[scale=0.2]{fig/ss_example1}
-\includegraphics[scale=0.2]{fig/ss_example2}
-\end{figure}
-
-}
-
-\onslide<2->{
 \begin{itemize}
-\item Idea: Average over the different regions
+\item Human studies are an essential element of computer science
+\end{itemize}
+}
+\onslide<2-3>{
+\begin{itemize}
+\item  Users have a great impact on many outputs
+\end{itemize}
+}
+\onslide<3>{
+\begin{itemize}
+\item TREC evaluation of information retrieval systems  has a significant human-factors component
 \end{itemize}
 }
 \end{frame}
 
-\begin{frame}{Improving Accuracy - Result}
 
+
+
+
+\begin{frame}{Coding for Experimentation }
 \onslide<1->{
-\begin{figure}
-\includegraphics[scale=0.15]{fig/box_example1}
-\includegraphics[scale=0.15]{fig/box_example2}
-\includegraphics[scale=0.15]{fig/box_example3}
-\end{figure}
+\begin{itemize}
+\item The Basic rule\\
+\tab \footnotesize Keep things simple!
+\end{itemize}
+}
+\onslide<2-5>{
+\begin{itemize}
+\item One task, one tool\\
+\tab \footnotesize Decompose the problem into separate pieces of code
+\end{itemize}
+}
+\onslide<3-5>{
+\begin{itemize}
+\item Cut the right corners\\
+\tab \footnotesize Code, if you have to run the experiment again
+\end{itemize}
+}
+\onslide<4-5>{
+\begin{itemize}
+\item Use the right tool, not the most convenient one
+\end{itemize}
+}
+\onslide<5>{
+\begin{itemize}
+\item Verify the correctness of the output
+\end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Coding for Experimentation}
+\onslide<1->{
+ \textbf{Using Unix}\\
+\begin{itemize}
+\item Run in command-line
+\item Run all experiments from scripts
+\end{itemize} 
+}
+\onslide<2>{
+\vspace{5mm}
+ \textbf{Feasibility}
+\begin{itemize}
+\item Large volumes of data
+\item Implementation of production quality code
+\item Use humans for evaluation of results
+\item Use of particular pieces of software
+\end{itemize}
+}
+
+\end{frame}
+
+\begin{frame}{Describing Experiments}
+\onslide<1->{
+\begin{itemize}
+\item Analyze the results\\
+\tab \footnotesize Explain the results by confirming or disproving the hypothesis
+\end{itemize} 
 }
 \onslide<2>{
 \begin{figure}
-\centering
-\includegraphics[scale=0.25]{fig/mean_bad_box}
+ \includegraphics[scale = 0.2]{fig/pic10}
+\vspace{10cm}
+ \includegraphics[scale=0.16]{fig/pic12}
 \end{figure}
 }
 \end{frame}
 
-\begin{frame}{Improving Accuracy - Result}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{fig/error_rate_mean_vs_highest}
-\end{figure}
+\begin{frame}{Describing Experiments}
+\onslide<1->{
+\begin{itemize}
+\item Decide which results to report\\
+\tab \footnotesize Do not show the material with no interest to others
+\end{itemize} 
+}
+\onslide<2-3>{
+\begin{itemize}
+\item State the existence of failure\\
+\tab \footnotesize If a test fails on some data sets and succeeds on others, it is unethical to hide the failures
+\end{itemize} 
+}
+\onslide<3>{
+\begin{itemize}
+\item Experiment relevance to the hypothesis\\
+\tab \footnotesize Some experiments may lead to a dead end
+\end{itemize} 
+}
 \end{frame}
 
+\begin{frame}{Describing Experiments}
+\onslide<1->{
+\begin{itemize}
+\item Describe the data\\
+\tab \footnotesize How the data was gathered or created
+\end{itemize} 
+}
 
-\begin{frame}{Improving Accuracy - Result}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.32]{fig/yaw_pose_error_mean_vs_highest}
-\includegraphics[scale=0.32]{fig/roll_pose_error_mean_vs_highest}
-\includegraphics[scale=0.32]{fig/pitch_pose_error_mean_vs_highest}
-\end{figure}
+\onslide<2-3>{
+\begin{itemize}
+\item Notebooks\\
+\tab \footnotesize Strategy used by researchers in other departments of science
+\end{itemize} 
+}
+\onslide<3>{
+\begin{itemize}
+\item Online coding\\
+\tab \footnotesize Strategy used in computer science keeps researchers honest
+\end{itemize} 
+}
 \end{frame}
 
-\begin{frame}{Qualitative Results}
-\begin{figure}
-\iffalse
-\includegraphics[scale=0.22]{fig/mean_example_pres4}
-\includegraphics[scale=0.22]{fig/mean_example_pres2}
-\fi
-\includegraphics[scale=0.25]{fig/mean_example_pres6}
-\includegraphics[scale=0.25]{fig/mean_example_pres}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Synthetic Training Data}
-\begin{center}
-\begin{huge}
-Synthetic Training Data
-\end{huge}
+\begin{frame}{Discussion}
+\onslide<1->{
+\begin{center} Thank you for your attention!\\
+ Question?
 \end{center}
-\end{frame}
-
-
-\begin{frame}{Synthetic Training Data}
-
-\begin{itemize}
-\item High dependency on real world data
-\item Synthetic data for training\footnote{https://github.com/unibas-gravis/parametric-face-image-generator}
-\end{itemize}
-\begin{figure}
-\centering
-\includegraphics[scale=0.45]{fig/13_0}
-\includegraphics[scale=0.45]{fig/13_1}
-
-\end{figure}
-
-\end{frame}
-
-
-\begin{frame}{Synthetic Training Data - Result on Synthetic Data}
-\begin{figure}
-\centering
-\includegraphics[scale=0.45]{fig/error_rate_synth_synth}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Synthetic Training Data - Result on Real World Data}
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{fig/error_rate_synth_on_aflw}
-\end{figure}
-\end{frame}
-
-
-
-
-\begin{frame}{Tuning with Real Word Data}
-
-\begin{itemize}
-\item Further train the network with real world data
-\end{itemize}
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{fig/error_rate_synth_real2}
-\end{figure}
-
-\end{frame}
-
-\section{Conclusion}
-
-\begin{frame}{Conclusion}
-\only<1>{
-\begin{itemize}
-\item Reproduction? \checkmark
-\item \color{gray}{Improve Accuracy?} 
-\item \color{gray}{Synthetic Data in Training?} 
-\end{itemize}
-}
-
-\only<2>{
-\begin{itemize}
-\item Reproduction? \checkmark
-\item Improve Accuracy \checkmark (+ Uncertainty) \\
-$\rightarrow$ Average over regions
-\item \color{gray}{Synthetic data in training?}
-\end{itemize}
 
 }
-
-\only<3>{
-\begin{itemize}
-\item Reproduction? \checkmark
-\item Improve Accuracy? \checkmark (+ Uncertainty)\\
-$\rightarrow$ Average over regions
-\item Synthetic data in training? \checkmark \\
-$\rightarrow$ Tuning gives state-of-the-art-performance
-\end{itemize}
-}
-\end{frame}
-
-\section{Outlook}
-\begin{frame}{Outlook}
-
-\begin{itemize}
-
-\item Leverage Uncertainty: Online Learning
-\item Increase quality of synthetic data
-\item Combine tuned network with averaging
-\item Change thresholds
-\end{itemize}
 \end{frame}
 
 \end{document}
