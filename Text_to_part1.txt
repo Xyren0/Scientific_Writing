@@ -14,7 +14,7 @@ As a consequence, we have a barrier to entry. We first have to know
 what methods already exist, how they work and obtain the needed tools to make a comparison.
 BUT: All thes factors, do not excuse poor science.
 
-Now a few possible problems that may arisean. Maybe the baseline is not updated: There are papers in the 1980s and even the 2000s that 
+Now a few possible problems that may arise. Maybe the baseline is not updated: There are papers in the 1980s and even the 2000s that 
 used the baseline from a paper from the 1970s. The new work was compared to previous work in the same area but not 
 to relevant work on other pertinent technology. 
 Another problem may be that a widely available implementation becomes a commonly used
@@ -44,5 +44,52 @@ For the data, we made a list with the most important Do's and Don'ts for you.
 First, we need to distinguish between observation phase (learn under study) and confirmation phase. The observation phase is where we tune 
 the algorithm, tune some parameters on our dataset. But now, we have to confirm, that this algorithm also works 
 on other data, not just where we tuned it on, hence the confirmation phase (validate the hypothesis)
-This is closely related to the next part. THis means we have to take care to not chose our parameters to fit 
+This is closely related to the next part. This means we have to take care to not chose our parameters to fit 
 the data or the other way round. This would eliminate the fairness of the experiment and invalidate it. 
+Another good thing to do is, to find data, where the hypothesis is least likely to hold. These are the interesting
+cases and it shows limits of your work but also room for improvement in the future and it shows, that you also 
+considered "harder" data and not just easy data you only used to support your hypothesis. 
+
+And of course, this should be kind of obvious, but it happens, that you want to make an experiment where you
+need special data, but you don't have it nor do you have access to it. This is something that can destroy your whole
+experiment and you are going to have problems supporting your claims. That's why you should first find out
+if you have a way to obtain the needed data, and of course in sufficient quantity/quality. 
+And, consider different data sets, to reduce the risk of overfitting to a specific dataset.
+And test on volumes you are making the claims on. If you claim something works for GB, but you only test it 
+on MB volumes, does not support your hypothesis. 
+
+Now that we have a baseline to compare and data, we make the experiments, hopefully get some results, but 
+what now. We need to interpret our results. This is a rather hard task, as there are many things to consider.
+Is the success due to your work or are there other possible interpretations. To eliminate that, make further
+adjusted tests such that it is obvious that your contribution makes the difference. Further in case of failure
+be very careful. You may want to write something alongthe lines of "We have shown it is not possible to make further improvement"
+but that may lead the reader to think that you were incapable of doing better not flaws in the hypothesis. 
+(Unless you are really sure and showed it throuroughly)
+It is better to redesign the test and most likely a problem in the test not the hypothesis is the problem. 
+Further, just because your method worked in a special case, doesn't mean it will do so in general. This goes
+hand-in-hand with drawing undue conclusions. Just because it works better on large and medium sets does not mean
+it will also work better on small sets. And the opposite is also to avoid. If your method is worse than the 
+comparison, it is worse, not equivalent in any way and therefore do not claim it. 
+And very often, it is better to report the success in an ordinal, not interval or ratio. The exact values can
+change from system to system or data sets, but a trend or pattern stays apart from minor changes in the exact values.
+
+And as a last part of the interpretation, Zobel says : A key concept.......
+
+Now to the robustness: 
+Zoble mentions a few things that makes an experiment robust: 
+First off, it is independent on the quality of implementation: just because something is not perfectly implemented
+should not mean it performs way worse. If possible, it should unambiguously yield True or false. 
+If that is not possible, as mentioned before, it shoud demonstrate a trend or pattern.
+Further, the success must be obvious, not subject to interpretation: 
+
+For speed experiments, we can consider different times, like maximum, minimum average or median. In each
+of the cases we have to consider anomalies or watch out for underestimates. Further the question arises 
+what to do with the anomalies. Simply discarding is rarely a good idea, it is better to try to explain and 
+discuss them. But for that, in Chapter 15 more information will be given. 
+
+Back to the general robustness, we have to consider that some methods consist of components. If we change one 
+part of it and test it as a whole it is less obvious how much the change contributed. It is better to also
+compare the components. A similar thing should be done with relevant variables. Invesitgate them separately 
+and see what happens if we increase it, and increase it even more. 
+Where we have to be careful is, when we consider distributed algorithms and we need to understand what we 
+test, as Zobelsasys: To produce strong......
