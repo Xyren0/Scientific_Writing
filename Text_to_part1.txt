@@ -1,0 +1,35 @@
+To start off, we want to show you two, in our opinion important quotes from Zobel. First, he says, that experiments are an
+essential part of sound science. This stand in contrast to the fact, that there are many researchers that hold low opinions on papers without new theory and 
+are only experimental. 
+The second one is about the experiments. Tests should be fair rather than constructed to support the hypothesis. 
+The idea is to test your hypothesis and make it comparable to other implementation to convince the reader. A test that
+is biased will not persuade the readers. 
+In order to make our test fair, the first step after Zobel is the identifying the baseline. Further, not just 
+any baseline, but an appropriate one. For example, it makes no sense to compare your new sorting algorithm to 
+Bubblesort and therefore is a breakthrough. As a consequence, we have a barrier to entry. We first have to know
+what methods already exist, how they work and obtain the needed tools to make a comparison. BUT: 
+This is no excuse for poor science, just because there is a barrier. 
+
+Another problem arises when the baseline is not updated: There are papers in the 1980s and even the 2000s that 
+used the baseline from a paper from the 1970s. The new work was compared to previous work in the same area but not 
+to relevant work on other pertinent technology. 
+ or a widely available implementation becomes a commonly used
+reference point. Where this shows a confidence in the baseline being correct, but advances in this area may not be cummulative.
+Many new methods improve compared to the baseline, but they are not compared to one another or even combined for even more
+advances. 
+
+What if there is no clear baseline? Maybe there is an obvious way an informed person might use or the first workable
+option a person suggess. 
+
+The baseline has to be identified early, what is the point if existing methods are already good enough. 
+
+Persuasive Data:
+Important to consider: 
+What data is available, what is the source
+Mechanisms to gain the data and standardize
+Data sufficient in in volume/quality
+Is domain knowledge needed
+Likely limits, biases, flaws and properties of data and how this is handled
+Assumption on how the results will be when the experiment support/ the hypothesis.
+
+

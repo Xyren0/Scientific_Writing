@@ -1,0 +1,198 @@
+\documentclass{beamer}
+\usepackage[backend=bibtex,style=trad-plain, citestyle=verbose]{biblatex}
+\usepackage{xcolor}
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+\mode<presentation>
+{
+  \usetheme{Darmstadt}       % or try default, Darmstadt, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{serif}    % or try default, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{}[numbered]
+} 
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{chemfig}
+\usepackage[version=3]{mhchem}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{relsize}
+\usepackage{color}
+
+\newcommand{\bigqm}[1][1]{\text{\larger[#1]{\textbf{?}}}}
+\newcommand*{\vimage}[2]{\vcenter{\hbox{\includegraphics[#1]{#2}}}}
+\newcommand*{\vpointer}{\vcenter{\hbox{\scalebox{2}{\Huge\pointer}}}}
+
+\bibliography{Presentation}
+\bibstyle{plain}
+\definecolor{mygray}{gray}{0.6}
+
+% On Overleaf, these lines give you sharper preview images.
+% You might want to `comment them out before you export, though.
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+% Here's where the presentation starts, with the info for the title slide
+\title{Experiments}
+\author{Daniel Seidinger, Brikena Celaj}
+\date{02.11.2018}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Experiments}
+\begin{block}{Zobel 197}
+Experiments are an essential part of sound science
+\end{block}
+
+\begin{block}{ Zobel 198}
+Tests should be fair rather than constructed to support the hypothesis
+\end{block}
+\end{frame}
+
+\section{Baseline and Data}
+\begin{frame}{Baseline}
+First steps:
+\begin{itemize}
+\item Identify an appropriate Baseline
+\item Barrier to entry: Must be familiar with existing methods/ideas 
+\item BUT: No excuse for poor science!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Baseline}
+\begin{alertblock}{Possible Problems}
+\begin{itemize}
+\item Baseline is not updated 
+\item Widely available implementation is used as a reference point
+$\rightarrow$ Improvements may not be cummulative
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Persuasive Data}
+\begin{itemize}
+\item Access and understanding of the appropriate data is critical for experiments
+\end{itemize}
+\begin{block}{Things to Consider}
+\begin{itemize}
+\item What data is available, what is the source
+\item What specific mechanisms to gather and standardize
+\item Will the data be sufficient in volume/quality
+\item What domain knowledge is needed to interpret the data
+\item Limits, biases, flaws and properties of the data and how this is managed
+\item What will the results be if the data supports/opposes the hypothesis 
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{Persuasive Data}
+\begin{block}{Do's and Don'ts}
+
+\begin{itemize}
+\item Distinguish between observation phase and confirmation phase
+\item Choosing parameters to suite data or vice versa invalidates the research
+\item Identify data/input for which the hypothesis is least likely to hold, these are the interesting cases
+\end{itemize}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Persuasive Data}
+\begin{block}{Do's and Don'ts}
+
+\begin{itemize}
+\item Before committing to a research question, be sure that you are able to obtain the needed data
+\item Have sufficient data sets
+\item Test on volumes of data you are making the claims on
+\end{itemize}
+
+\end{block}
+\end{frame}
+
+\section{Interpretation}
+\begin{frame}{Interpretation}
+The experiment yielded results (hopefully), what now? \\
+\begin{itemize}
+\item Are there other possible interpretations?
+\item[] $\rightarrow$ Further tests to eliminate them
+\item Is the outcome as expected? 
+\item Careful with failed experiments
+\item  Success in special case $\not =$ Success in general
+
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Interpretation}
+\begin{itemize}
+\item Don't draw undue conclusions or overstate them
+
+\begin{block}{Zobel 204}
+[...] many measures in computer
+science are on an ordinal, rather than an interval or ratio [...]
+\end{block}
+\end{itemize}
+\end{frame}
+
+
+\section{Robustness}
+\begin{frame}{Robustness}
+Properties of robust experiments:
+\begin{itemize}
+
+\item Independent of quality of implementation 
+\item Yield \color{green}\checkmark \color{black}  or \color{red} $\times$ \color{black} 
+\item Demonstrate a trend or pattern
+\item Success is obvious, not a subject to interpretation
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Robustness - Speed Experiments}
+\begin{block}{Speed Experiments}
+\begin{itemize}
+\item Maximum, minimum, average or median time 
+\item Care for anomalies 
+\item Explain/discuss them
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Compare components to show their value
+\item 
+\end{itemize}
+\end{frame}
+
+\end{document}
