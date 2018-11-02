@@ -6,30 +6,43 @@ The idea is to test your hypothesis and make it comparable to other implementati
 is biased will not persuade the readers. 
 In order to make our test fair, the first step after Zobel is the identifying the baseline. Further, not just 
 any baseline, but an appropriate one. For example, it makes no sense to compare your new sorting algorithm to 
-Bubblesort and therefore is a breakthrough. As a consequence, we have a barrier to entry. We first have to know
-what methods already exist, how they work and obtain the needed tools to make a comparison. BUT: 
-This is no excuse for poor science, just because there is a barrier. 
+Bubblesort and therefore is a breakthrough.
+Or, imagine you are starting a series of experiments, spend a lot of time and effort, maybe money into
+the experiments, just to find at the end, there is already a method and additionally it is much easier
+and yields good enough results. 
+As a consequence, we have a barrier to entry. We first have to know
+what methods already exist, how they work and obtain the needed tools to make a comparison.
+BUT: All thes factors, do not excuse poor science.
 
-Another problem arises when the baseline is not updated: There are papers in the 1980s and even the 2000s that 
+Now a few possible problems that may arisean. Maybe the baseline is not updated: There are papers in the 1980s and even the 2000s that 
 used the baseline from a paper from the 1970s. The new work was compared to previous work in the same area but not 
 to relevant work on other pertinent technology. 
- or a widely available implementation becomes a commonly used
+Another problem may be that a widely available implementation becomes a commonly used
 reference point. Where this shows a confidence in the baseline being correct, but advances in this area may not be cummulative.
 Many new methods improve compared to the baseline, but they are not compared to one another or even combined for even more
 advances. 
 
-What if there is no clear baseline? Maybe there is an obvious way an informed person might use or the first workable
+And, of course, what if there is no clear baseline, what am i going to compare myself with? 
+Maybe there is an obvious way an informed person might use or the first workable
 option a person suggess. 
 
-The baseline has to be identified early, what is the point if existing methods are already good enough. 
-
+Now, with an appropriate baseline, we can need to find data. And not just data, but persuasive data, we
+want to show the reader, that our method really is as good as we say in our hypothesis. That's why we need
+good data. Zobel mentions a few things we need to consider for this: 
+(You can find examples to these points in the book)
 Persuasive Data:
 Important to consider: 
-What data is available, what is the source
-Mechanisms to gain the data and standardize
-Data sufficient in in volume/quality
-Is domain knowledge needed
-Likely limits, biases, flaws and properties of data and how this is handled
-Assumption on how the results will be when the experiment support/ the hypothesis.
+What data is available, what is the source 
+Mechanisms to gain the data and standardize (Do we have to make changes to the data, if yes, what. Inform the reader what was changed)
+Data sufficient in in volume/quality 
+Is domain knowledge needed (In some areas, additional knowledge is needed, for example in biology regarding genes.
+A researcher in that are needs to know, that DNA is prone to errors, meaning we can't just use perfect error free data for the experiment)
+Likely limits, biases, flaws and properties of data and how this is handled 
+Assumption on how the results will be when the experiment support/ the hypothesis 
 
-
+For the data, we made a list with the most important Do's and Don'ts for you. 
+First, we need to distinguish between observation phase (learn under study) and confirmation phase. The observation phase is where we tune 
+the algorithm, tune some parameters on our dataset. But now, we have to confirm, that this algorithm also works 
+on other data, not just where we tuned it on, hence the confirmation phase (validate the hypothesis)
+This is closely related to the next part. THis means we have to take care to not chose our parameters to fit 
+the data or the other way round. This would eliminate the fairness of the experiment and invalidate it. 

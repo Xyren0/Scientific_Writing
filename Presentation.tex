@@ -63,9 +63,148 @@ Brikena Celaj}
 \date{02.11.2018}
 
 \begin{document}
-
 \begin{frame}
   \titlepage
+\end{frame}
+
+\begin{frame}{Experiments}
+\begin{block}{Zobel 197}
+Experiments are an essential part of sound science
+\end{block}
+
+\begin{block}{ Zobel 198}
+Tests should be fair rather than constructed to support the hypothesis
+\end{block}
+\end{frame}
+
+\section{Baseline and Data}
+\begin{frame}{Baseline}
+First steps:
+\begin{itemize}
+\item Identify an appropriate Baseline
+\item Existing methods already good enough?
+\item Barrier to entry: Must be familiar with existing methods/ideas 
+\end{itemize}
+BUT: No excuse for poor science!
+\end{frame}
+
+\begin{frame}{Baseline}
+\begin{alertblock}{Possible Problems}
+\begin{itemize}
+\item Baseline is not updated 
+\item Widely available implementation is used as a reference point
+\item[] $\rightarrow$ Improvements may not be cummulative
+\item No clear baseline
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Persuasive Data}
+\begin{itemize}
+\item Access and understanding of the appropriate data is critical for experiments
+\end{itemize}
+\begin{block}{Things to Consider}
+\begin{itemize}
+\item What data is available, what is the source
+\item What specific mechanisms to gather and standardize
+\item Will the data be sufficient in volume/quality
+\item What domain knowledge is needed to interpret the data
+\item Limits, biases, flaws and properties of the data and how this is managed
+\item What will the results be if the data supports/opposes the hypothesis 
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{Persuasive Data}
+\begin{block}{Do's and Don'ts}
+
+\begin{itemize}
+\item Distinguish between observation phase and confirmation phase
+\item Choosing parameters to suite data or vice versa invalidates the research
+\item Identify data/input for which the hypothesis is least likely to hold, these are the interesting cases
+\end{itemize}
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Persuasive Data}
+\begin{block}{Do's and Don'ts}
+
+\begin{itemize}
+\item Before committing to a research question, be sure that you are able to obtain the needed data
+\item Have sufficient data sets
+\item Test on volumes of data you are making the claims on
+\end{itemize}
+
+\end{block}
+\end{frame}
+
+\section{Interpretation}
+\begin{frame}{Interpretation}
+The experiment yielded results (hopefully), what now? \\
+\begin{itemize}
+\item Are there other possible interpretations?
+\item[] $\rightarrow$ Further tests to eliminate them
+\item Careful with failed experiments
+
+\end{itemize}
+\color{red} $\times$ \color{black} "We have shown that it is not possible to
+make further improvement" \\
+\color{green} \checkmark \color{black} Redesign, likely a problem in the test not hypothesis
+\end{frame}
+
+\begin{frame}{Interpretation}
+\begin{itemize}
+\item  Success in special case $\not =$ Success in general
+\item Don't draw undue conclusions or overstate them
+\item Ordinal better than interval/ratio
+\begin{block}{Zobel 205}
+A key concept here is of predictivity. The main reason that we experiment and
+measure is to provide evidence about the behaviour of a system in general [...].
+\end{block}
+\end{itemize}
+$\rightarrow$ We usually want to make claims about the system and on new data, not the one we have already seen
+\end{frame}
+
+
+\section{Robustness}
+\begin{frame}{Robustness}
+Properties of robust experiments:
+\begin{itemize}
+
+\item Independent of quality of implementation 
+\item Yield \color{green}\checkmark \color{black}  or \color{red} $\times$ \color{black} 
+\item Demonstrate a trend or pattern
+\item Success is obvious, not a subject to interpretation
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Robustness - Speed Experiments}
+\begin{block}{Speed Experiments}
+\begin{itemize}
+\item Maximum, minimum, average or median time 
+\item Care for anomalies and don't just discard them
+\item Explain/discuss them
+\end{itemize}
+$\rightarrow$ More in Chapter 15
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Compare components, not only as a whole
+\item investigate relevant variables separately
+\item Measuring distributed algorithms may be difficult 
+\end{itemize}
+\begin{block}{Zobel 207}
+To produce strong experimental designs [...], researchers need to use their understanding [...] of the algorithms to
+anticipate whether issues of robustness will arise.
+\end{block}
+
 \end{frame}
 
 \begin{frame}{Performance of Algorithms}
@@ -238,11 +377,11 @@ Researchers should answer these questions:
 \end{itemize} 
 }
 \onslide<2>{
-\begin{figure}
- \includegraphics[scale = 0.2]{fig/pic10}
-\vspace{10cm}
- \includegraphics[scale=0.16]{fig/pic12}
-\end{figure}
+%\begin{figure}
+% \includegraphics[scale = 0.2]{fig/pic10}
+%\vspace{10cm}
+% \includegraphics[scale=0.16]{fig/pic12}
+%\end{figure}
 }
 \end{frame}
 
