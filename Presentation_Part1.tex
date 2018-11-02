@@ -81,9 +81,10 @@ Tests should be fair rather than constructed to support the hypothesis
 First steps:
 \begin{itemize}
 \item Identify an appropriate Baseline
+\item Existing methods already good enough?
 \item Barrier to entry: Must be familiar with existing methods/ideas 
-\item BUT: No excuse for poor science!
 \end{itemize}
+BUT: No excuse for poor science!
 \end{frame}
 
 \begin{frame}{Baseline}
@@ -91,7 +92,8 @@ First steps:
 \begin{itemize}
 \item Baseline is not updated 
 \item Widely available implementation is used as a reference point
-$\rightarrow$ Improvements may not be cummulative
+\item[] $\rightarrow$ Improvements may not be cummulative
+\item No clear baseline
 \end{itemize}
 \end{alertblock}
 \end{frame}
@@ -144,21 +146,22 @@ The experiment yielded results (hopefully), what now? \\
 \begin{itemize}
 \item Are there other possible interpretations?
 \item[] $\rightarrow$ Further tests to eliminate them
-\item Is the outcome as expected? 
 \item Careful with failed experiments
-\item  Success in special case $\not =$ Success in general
-
 
 \end{itemize}
+\color{red} $\times$ \color{black} "We have shown that it is not possible to
+make further improvement" \\
+\color{green} \checkmark \color{black} Redesign, likely a problem in the test not hypothesis
 \end{frame}
 
 \begin{frame}{Interpretation}
 \begin{itemize}
+\item  Success in special case $\not =$ Success in general
 \item Don't draw undue conclusions or overstate them
-
-\begin{block}{Zobel 204}
-[...] many measures in computer
-science are on an ordinal, rather than an interval or ratio [...]
+\item Ordinal better than interval/ratio
+\begin{block}{Zobel 205}
+A key concept here is of predictivity. The main reason that we experiment and
+measure is to provide evidence about the behaviour of a system in general [...].
 \end{block}
 \end{itemize}
 \end{frame}
@@ -181,18 +184,25 @@ Properties of robust experiments:
 \begin{block}{Speed Experiments}
 \begin{itemize}
 \item Maximum, minimum, average or median time 
-\item Care for anomalies 
+\item Care for anomalies and don't just discard them
 \item Explain/discuss them
 \end{itemize}
+$\rightarrow$ More in Chapter 15
 \end{block}
 
 \end{frame}
 
 \begin{frame}
 \begin{itemize}
-\item Compare components to show their value
-\item 
+\item Compare components, not only as a whole
+\item investigate relevant variables separately
+\item Measuring distributed algorithms may be difficult 
 \end{itemize}
+\begin{block}{Zobel 207}
+To produce strong experimental designs [...], researchers need to use their understanding [...] of the algorithms to
+anticipate whether issues of robustness will arise.
+\end{block}
+
 \end{frame}
 
 \end{document}
